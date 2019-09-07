@@ -15,10 +15,12 @@ class App extends Component {
           <a href="mbsaillinois.com">here!</a> <br></br>
           If you're interested in getting involved, please fill out our
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1oU7qttaGPRWogT_ROYd6RhlX5zRvBI_h_xYDq3Pj5dx5Iw/viewform?usp=sf_link">
+            {" "}
             committee preference form
-          </a>
+          </a>{" "}
           and join our
           <a href="https://www.facebook.com/groups/510815406335370/">
+            {" "}
             facebook group!
           </a>
         </p>
