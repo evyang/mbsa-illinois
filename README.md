@@ -1,27 +1,11 @@
-# React_Express_App_Medium_Tutorial
-- This repository has the code to support a tutorial that I created on Medium called Create a React FrontEnd, a Node/Express BackEnd and connect them together.
-- This repository can also be used as a starting point (boilerplate), if you whant to create your own React/Express app.
-.
+# About the repo
 
-## Where can I check the tutorial?
-You are very welcome to check the tutorial on Medium. Just follow the link below.
-- [Create a React FrontEnd, a Node/Express BackEnd and connect them together](https://medium.com/@jrshenrique/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c)
+This repo was made from the CLI methods of 'create-react-app' and 'express-generator'. This means the skeleton and integration of App component was provided by React.
 
-## About the app
-Actually, there are two separated apps. The Client which serves the FrontEnd (using React), and the API (in Node/Express).
+## Reasoning
 
-## How to run the API
-1. In your terminal, navigate to the `api` directory.
-2. Run `npm install` to install all dependencies.
-3. Run `npm start` to start the app.
+I wanted to get experience creating components in React while developing responsive forms. While there may be mistakes, I learned a lot in the process about how to design React components and about general debugging.
 
-## How to run the Client
-1. In another terminal, navigate to the `client` directory.
-2. Run `npm install` to install all dependencies.
-3. Run `npm start` to start the app
+## Future State
 
-## Check if they are connected
-1. With the two apps running, open your browser in http://localhost:3000/.
-2. If you see a webpage saying `Welcome to React`, it means the FrontEnd is working.
-3. If the same webpage has the phrase `API is working properly`, it means the API is working.
-4. Enjoy!
+I want to eventually bring this set-up into our current MBSA web page and have members sign in through our website instead of through a Google Form. Then, the data could be automatically sent to a Google Sheets spreadsheet instead of a back-end database for now.

@@ -10,6 +10,7 @@ class FormContainer extends Component {
   constructor(props) {
     super(props);
 
+    // Information we want to record per form instance
     this.state = {
       newUser: {
         name: "",
@@ -19,7 +20,7 @@ class FormContainer extends Component {
         hear: [],
         about: ""
       },
-
+      // current array options
       emailOptions: ["Yes", "No", "I signed up but haven't received anything"],
       yearOptions: ["Freshman", "Sophomore", "Junior", "Senior", "Graduate"],
       hearOptions: [
@@ -31,10 +32,7 @@ class FormContainer extends Component {
       ]
     };
 
-    const API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
-
     this.handleTextArea = this.handleTextArea.bind(this);
-    // this.handleAge = this.handleAge.bind(this);
     this.handleFullName = this.handleFullName.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
@@ -42,43 +40,31 @@ class FormContainer extends Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  // handlers for each type of form component, the way they record data is different
   handleFullName(e) {
     let value = e.target.value;
-    this.setState(
-      prevState => ({ newUser: { ...prevState.newUser, name: value } })
-      //   () => console.log(this.state.newUser)
-    );
+    this.setState(prevState => ({
+      newUser: { ...prevState.newUser, name: value }
+    }));
   }
-
-  //   handleAge(e) {
-  //     let value = e.target.value;
-  //     this.setState(
-  //       prevState => ({ newUser: { ...prevState.newUser, age: value } }),
-  //       () => console.log(this.state.newUser)
-  //     );
-  //   }
 
   handleInput(e) {
     let value = e.target.value;
     let name = e.target.name;
-    this.setState(
-      prevState => ({ newUser: { ...prevState.newUser, [name]: value } })
-      //   () => console.log(this.state.newUser)
-    );
+    this.setState(prevState => ({
+      newUser: { ...prevState.newUser, [name]: value }
+    }));
   }
 
   handleTextArea(e) {
     // console.log("Inside handleTextArea");
     let value = e.target.value;
-    this.setState(
-      prevState => ({
-        newUser: {
-          ...prevState.newUser,
-          about: value
-        }
-      })
-      //   () => console.log(this.state.newUser)
-    );
+    this.setState(prevState => ({
+      newUser: {
+        ...prevState.newUser,
+        about: value
+      }
+    }));
   }
 
   handleCheckBox(e) {
@@ -118,6 +104,7 @@ class FormContainer extends Component {
       });
   }
 
+  // clearing whole form for 'clear' button
   handleClearForm(e) {
     e.preventDefault();
     this.setState({
@@ -135,6 +122,7 @@ class FormContainer extends Component {
   render() {
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
+        {/* Using form components to populate container */}
         <Input
           inputType={"text"}
           title={"Full Name"}
@@ -152,7 +140,7 @@ class FormContainer extends Component {
           placeholder={"Enter your Illinois netID"}
           handleChange={this.handleInput}
         />{" "}
-        {/* Age */}
+        {/* Illinois specific NETID */}
         <Select
           title={"Have you been receiving our emails?"}
           name={"emailOptions"}
@@ -161,7 +149,7 @@ class FormContainer extends Component {
           handleChange={this.handleInput}
           placeholder={this.state.newUser.emailOptions}
         />{" "}
-        {/* Age Selection */}
+        {/* Emails Selection */}
         <Select
           title={"How did you hear about MBSA?"}
           name={"hearOptions"}
@@ -170,6 +158,7 @@ class FormContainer extends Component {
           handleChange={this.handleInput}
           placeholder={this.state.newUser.hearOptions}
         />{" "}
+        {/* Receiving emails?*/}
         <CheckBox
           title={"Grade"}
           name={"grade"}
@@ -177,7 +166,7 @@ class FormContainer extends Component {
           selectedOptions={this.state.newUser.grade}
           handleChange={this.handleCheckBox}
         />{" "}
-        {/* Skill */}
+        {/* Grade */}
         <p>
           <b>Extra Comments</b>
         </p>
@@ -192,7 +181,7 @@ class FormContainer extends Component {
           placeholder={"Please leave any feedback/questions here!"}
         />{" "}
         <br></br>
-        {/* About you */}
+        {/* Extra comments */}
         <Button
           action={this.handleFormSubmit}
           type={"primary"}
