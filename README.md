@@ -1,14 +1,14 @@
 # About the Repo
 
-This repo was made from the CLI methods of 'create-react-app' and 'express-generator'. This means the skeleton and integration of App component was provided by React.
+This repo was made from the CLI methods of `'create-react-app'` and `'express-generator'`. This means the skeleton and integration of App component was provided by React.
 
 ## Reasoning
 
-I wanted to get experience creating components in React while developing responsive forms. While there may be mistakes, I learned a lot in the process about how to design React components and about general debugging.
+I wanted to get experience creating components in React while developing responsive forms. While there may be mistakes, I learned a lot in the process about how to design React components and about general debugging!
 
 ## How to find everything
 
-The 'api' folder is the Express backend and the 'client' folder contains the front-end! I stored the React components within client > src > components and the container for the main form within client > src > containers.
+The **'api'** folder is the Express backend and the **'client'** folder contains the front-end! I stored the React components within **client > src > components** and the container for the main form within **client > src > containers**.
 
 ## Future State!
 
